@@ -1,4 +1,0 @@
-/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/GAME_V1/build/CMakeFiles/game_v1_cli.dir
-/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/GAME_V1/build/CMakeFiles/game_v1_sfml.dir
-/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/GAME_V1/build/CMakeFiles/edit_cache.dir
-/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/GAME_V1/build/CMakeFiles/rebuild_cache.dir
