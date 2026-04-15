@@ -285,7 +285,11 @@ public:
             out << row << "\n";
     }
 
-    SearchResult findSupplyRouteBFS(const std::string& startId, const std::string& targetId) const
+    // ===== FUNCIONES REQUERIDAS =====
+
+    // BFS - Busca el camino con MENOS CALLES (menos saltos)
+    // Requerimiento: "buscarSuministrosBFS"
+    SearchResult buscarSuministrosBFS(const std::string& startId, const std::string& targetId) const
     {
         SearchResult result;
         const int start = getIndex(startId);
@@ -335,7 +339,15 @@ public:
         return result;
     }
 
-    SearchResult findSafeRouteDFS(const std::string& startId, const std::string& targetId) const
+    // Alias en inglés para compatibilidad
+    SearchResult findSupplyRouteBFS(const std::string& startId, const std::string& targetId) const
+    {
+        return buscarSuministrosBFS(startId, targetId);
+    }
+
+    // DFS - Determina si existe un camino evitando zonas rojas
+    // Requerimiento: "esRutaSeguraDFS"
+    SearchResult esRutaSeguraDFS(const std::string& startId, const std::string& targetId) const
     {
         SearchResult result;
         const int start = getIndex(startId);
@@ -360,7 +372,15 @@ public:
         return result;
     }
 
-    SearchResult findLowestDangerDijkstra(const std::string& startId, const std::string& targetId) const
+    // Alias en inglés para compatibilidad
+    SearchResult findSafeRouteDFS(const std::string& startId, const std::string& targetId) const
+    {
+        return esRutaSeguraDFS(startId, targetId);
+    }
+
+    // Dijkstra - Busca el camino con MENOR PELIGRO (suma de pesos)
+    // Requerimiento: "buscarMenorPeligroDijkstra"
+    SearchResult buscarMenorPeligroDijkstra(const std::string& startId, const std::string& targetId) const
     {
         SearchResult result;
         const int start = getIndex(startId);
@@ -416,7 +436,16 @@ public:
         return result;
     }
 
-    int connectedComponents(bool ignoreRedZones = true) const
+    // Alias en inglés para compatibilidad
+    SearchResult findLowestDangerDijkstra(const std::string& startId, const std::string& targetId) const
+    {
+        return buscarMenorPeligroDijkstra(startId, targetId);
+    }
+
+    // ===== FUNCIONES DE CONECTIVIDAD =====
+
+    // Requerimiento: "componentesConexas" para verificar si hay refugios aislados
+    int componentesConexas(bool ignoreRedZones = true) const
     {
         if (empty())
             return 0;
@@ -449,6 +478,12 @@ public:
         }
 
         return components;
+    }
+
+    // Alias en inglés
+    int connectedComponents(bool ignoreRedZones = true) const
+    {
+        return componentesConexas(ignoreRedZones);
     }
 
     std::vector<std::vector<std::string> > listComponents(bool ignoreRedZones = true) const
@@ -819,8 +854,8 @@ inline void printMainMenuV2()
     std::cout << "5. Ver mapa ASCII\n";
     std::cout << "6. Bloquear zona\n";
     std::cout << "7. Desbloquear zona\n";
-    std::cout << "8. Buscar suministros BFS\n";
-    std::cout << "9. Ruta segura DFS\n";
+    std::cout << "8. Buscar suministros BFS (buscarSuministrosBFS)\n";
+    std::cout << "9. Ruta segura DFS (esRutaSeguraDFS)\n";
     std::cout << "10. Ver conectividad\n";
     std::cout << "11. Ruta de menor peligro Dijkstra\n";
     std::cout << "0. Salir\n";
@@ -883,7 +918,7 @@ inline void runGrafosGameV2()
             std::cin >> startId;
             std::cout << "Hospital objetivo: ";
             std::cin >> targetId;
-            SearchResult result = game.findSupplyRouteBFS(startId, targetId);
+            SearchResult result = game.buscarSuministrosBFS(startId, targetId);
             game.printSearchResult("Exploracion de suministros BFS", result, "Calles atravesadas");
             if (result.found)
                 game.showAsciiMap(result.path);
@@ -896,7 +931,7 @@ inline void runGrafosGameV2()
             std::cin >> startId;
             std::cout << "Zona sur: ";
             std::cin >> targetId;
-            SearchResult result = game.findSafeRouteDFS(startId, targetId);
+            SearchResult result = game.esRutaSeguraDFS(startId, targetId);
             game.printSearchResult("Ruta de rescate DFS", result, "Saltos explorados");
             if (result.found)
                 game.showAsciiMap(result.path);
@@ -913,7 +948,7 @@ inline void runGrafosGameV2()
             std::cin >> startId;
             std::cout << "Destino: ";
             std::cin >> targetId;
-            SearchResult result = game.findLowestDangerDijkstra(startId, targetId);
+            SearchResult result = game.buscarMenorPeligroDijkstra(startId, targetId);
             game.printSearchResult("Ruta de menor peligro Dijkstra", result, "Peligro acumulado");
             if (result.found)
                 game.showAsciiMap(result.path);

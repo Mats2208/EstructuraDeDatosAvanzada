@@ -1,0 +1,26 @@
+# Mapa con zonas bloqueadas e inaccesibles para validar "sin ruta".
+# R y H quedan en componentes separadas si se ignoran zonas rojas.
+
+TIPO 2
+N R REFUGIO 0 0 0
+N S SUPERMERCADO 0 8 0
+N F FARMACIA 0 16 0
+N X ZONAROJA 1 24 0
+N P POLICIA 0 32 0
+N H HOSPITAL 0 40 0
+N B BARRICADA 0 18 8
+N Z SUR 0 46 10
+N I1 CASA 0 -18 16
+N I2 FARMACIA 0 -8 22
+N I3 HOSPITAL 0 -22 30
+
+A R S 1 1
+A S F 2 1
+A F X 1 1
+A X P 1 1
+A P H 2 1
+A F B 4 1
+A B X 2 1
+A H Z 2 1
+A I1 I2 1 1
+A I2 I3 1 1
