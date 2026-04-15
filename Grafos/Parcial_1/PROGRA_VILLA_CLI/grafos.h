@@ -11,8 +11,8 @@ using namespace std;
 
 struct nodo {
     char nombre;
-    char tipo[20];       // REFUGIO, HOSPITAL, SUPERMERCADO, etc.
-    int bloqueado;       // 0 = libre, 1 = zona roja
+    char tipo[20];       
+    int bloqueado;       
     struct nodo* sgte;
     struct arista* ady;
 };
@@ -20,7 +20,7 @@ struct nodo {
 struct arista {
     struct nodo* destino;
     struct arista* sgte;
-    int peso;            // nivel de peligro
+    int peso;            
 };
 
 typedef struct nodo* Tnodo;
@@ -28,8 +28,6 @@ typedef struct arista* Tarista;
 
 Tnodo p = NULL;
 int tipoGrafo = 1;
-
-// ========== FUNCIONES BASICAS ==========
 
 Tnodo buscar_nodo(char nombre)
 {
@@ -116,8 +114,6 @@ void vaciar_grafo()
     p = NULL;
 }
 
-// ========== CARGAR DESDE ARCHIVO ==========
-
 void CargarGrafo(const char* nombre_archivo)
 {
     vaciar_grafo();
@@ -193,8 +189,6 @@ void CargarGrafo(const char* nombre_archivo)
     archivo.close();
 }
 
-// ========== MOSTRAR GRAFO ==========
-
 void mostrar_grafo()
 {
     Tnodo ptr = p;
@@ -212,8 +206,6 @@ void mostrar_grafo()
         cout << endl;
     }
 }
-
-// ========== BFS - BUSCAR SUMINISTROS ==========
 
 void buscarSuministrosBFS(char inicioChar, char objetivoChar)
 {
@@ -299,8 +291,6 @@ void buscarSuministrosBFS(char inicioChar, char objetivoChar)
     cout << "\n  Calles atravesadas: " << len - 1 << endl;
 }
 
-// ========== DFS - RUTA SEGURA ==========
-
 bool dfs_ruta(Tnodo actual, Tnodo objetivo, Tnodo nodos[], int n, int visitado[], int camino[], int& len, int posActual)
 {
     int pos = posicion_nodo(nodos, n, actual);
@@ -369,8 +359,6 @@ void esRutaSeguraDFS(char inicioChar, char objetivoChar)
     cout << "\n";
 }
 
-// ========== COMPONENTES CONEXAS ==========
-
 void dfs_componente(Tnodo actual, Tnodo nodos[], int n, int visitado[], int comp[])
 {
     int pos = posicion_nodo(nodos, n, actual);
@@ -424,8 +412,6 @@ void mapaConectividad()
     else
         cout << "ALERTA: La ciudad esta DIVIDIDA en " << numComp << " componentes\n";
 }
-
-// ========== DIJKSTRA - RUTA MENOR PELIGRO ==========
 
 void dijkstraRuta(char inicioChar, char objetivoChar)
 {
