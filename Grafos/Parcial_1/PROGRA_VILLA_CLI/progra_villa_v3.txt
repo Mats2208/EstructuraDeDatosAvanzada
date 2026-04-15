@@ -1,0 +1,84 @@
+# Formato:
+# TIPO <1 dirigido | 2 no dirigido>
+# N <nombre> <tipoLugar> <bloqueado 0/1>
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+# Cuartel General
+N Q CUARTEL 0
+N R REFUGIO 0
+N H HOSPITAL 0
+N S SUPERMERCADO 0
+N F FARMACIA 0
+N P POLICIA 0
+N B BANCO 0
+N M MERCADO 0
+N E ESCUELA 0
+N L LIBRERIA 0
+N G GIMNASIO 0
+N D DEPOSITO 0
+N T TORRE 0
+N V VERIFIED 0
+# Zonas bloqueadas
+N X BARRIO1ROJO 1
+N Y BARRIO2ROJO 1
+N Z BARRIO3ROJO 1
+N W BARRIO4ROJO 1
+
+# Cuartel central
+A Q R 1 1
+A Q T 2 1
+A Q B 3 1
+
+# Refu central
+A R S 2 1
+A R E 1 1
+A R V 4 1
+
+# Supermercado zona
+A S F 2 1
+A S M 1 1
+A S X 5 1
+
+# Hospital zona
+A H P 1 1
+A H T 3 1
+A H Y 4 1
+
+# Farmacia zona
+A F D 2 1
+A F L 1 1
+A F Z 3 1
+
+# Banco zona
+A B L 2 1
+A B W 1 1
+
+# Mercado zona
+A M G 1 1
+A M X 2 1
+
+# Escuela zona
+A E G 3 1
+A E Y 2 1
+
+# Gimnasio
+A G D 2 1
+A G W 3 1
+
+# Torre comunicaciones
+A T V 1 1
+A T W 2 1
+
+# Libreria
+A L Z 1 1
+
+# Deposito
+A D W 3 1
+
+# Zonas rojas interconectadas
+A X Y 4 1
+A Y Z 3 1
+A Z W 5 1
+A W X 2 1
+A X Z 6 1

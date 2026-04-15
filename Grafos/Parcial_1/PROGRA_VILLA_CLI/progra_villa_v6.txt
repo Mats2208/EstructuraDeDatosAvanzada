@@ -1,0 +1,154 @@
+# Formato:
+# TIPO <1 dirigido | 2 no dirigido>
+# N <nombre> <tipoLugar> <bloqueado 0/1>
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+# Ciudad capital
+N A ALCALDIA 0
+N B BASE 0
+N R REFUGIO 0
+N H HOSPITAL 0
+N S SUPERMERCADO 0
+N F FARMACIA 0
+N P POLICIA 0
+N U CUARTEL 0
+N M MERCADO 0
+N E ESCUELA 0
+N L LIBRERIA 0
+N G GIMNASIO 0
+N D DEPOSITO 0
+N T TERMINAL 0
+N C CENTRO 0
+N N NORTE 0
+N O OESTEE 0
+N E2 ESTEE 0
+N S2 SUUR 0
+N Z ZONA 0
+N K PARQUE 0
+N V VEREDA 0
+N I IGLESIA 0
+N J JUZGADO 0
+N X BIBLIOTECA 0
+# Zonas rojas
+N R1 ROJO1 1
+N R2 ROJO2 1
+N R3 ROJO3 1
+N R4 ROJO4 1
+N R5 ROJO5 1
+
+# Alcaldia (nodo central)
+A A B 1 1
+A A C 2 1
+A A N 3 1
+
+# Base militar
+A B U 1 1
+A B R 2 1
+A B R1 4 1
+
+# Refu
+A R S 1 1
+A R H 3 1
+A R R2 2 1
+
+# Hospital
+A H P 1 1
+A H K 2 1
+A H R1 5 1
+
+# Supermercado
+A S F 2 1
+A S M 1 1
+A S O 3 1
+
+# Farmacia
+A F E 1 1
+A F V 2 1
+A F R2 4 1
+
+# Policia
+A P U 1 1
+A P C 2 1
+A P R3 3 1
+
+# Cuartel
+A U M 2 1
+A U T 1 1
+
+# Mercado
+A M E 1 1
+A M L 2 1
+
+# Escuela
+A E L 1 1
+A E G 2 1
+
+# Libreria
+A L G 1 1
+A L X 3 1
+
+# Gimnasio
+A G D 2 1
+A G R4 1 1
+
+# Deposito
+A D T 1 1
+A D S2 2 1
+
+# Terminal
+A T C 1 1
+A T I 3 1
+
+# Centro
+A C J 2 1
+A C Z 1 1
+
+# Norte
+A N O 2 1
+A N R1 3 1
+
+# Oeste
+A O E2 1 1
+A O V 2 1
+
+# Este
+A E2 S2 1 1
+A E2 R5 2 1
+
+# Sur
+A S2 Z 3 1
+A S2 R5 1 1
+
+# Parque
+A K V 1 1
+A K R3 4 1
+
+# Vereda
+A V I 2 1
+A V R4 3 1
+
+# Iglesia
+A I J 1 1
+A I R4 2 1
+
+# Juzgado
+A J X 1 1
+A J R5 3 1
+
+# Biblioteca
+A X Z 2 1
+A X R5 1 1
+
+# Zona
+A Z R3 2 1
+
+# Red de Zonas Rojas
+A R1 R2 4 1
+A R2 R3 3 1
+A R3 R4 2 1
+A R4 R5 5 1
+A R5 R1 1 1
+A R1 R3 6 1
+A R2 R4 3 1
+A R3 R5 4 1

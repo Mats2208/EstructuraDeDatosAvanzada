@@ -1,0 +1,101 @@
+# Formato:
+# TIPO <1 dirigido | 2 no dirigido>
+# N <nombre> <tipoLugar> <bloqueado 0/1>
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+# Base operativa
+N A BASE 0
+N R REFUGIO 0
+N H HOSPITAL 0
+N S SUPERMERCADO 0
+N F FARMACIA 0
+N P POLICIA 0
+N C COMANDO 0
+N D DEPOSITO 0
+N M METRO 0
+N T TERMINAL 0
+N L LAGO 0
+N K PARQUE 0
+N J JEFATURA 0
+N U UNIDAD 0
+N N NORTE 0
+N E ESTE 0
+N O OESTE 0
+N SUR SUR 0
+# Zonas rojas
+N X ZONA1 1
+N Y ZONA2 1
+N Z ZONA3 1
+N W ZONA4 1
+N V ZONA5 1
+
+# Base central
+A A R 1 1
+A A C 2 1
+A A N 3 1
+
+# Refu conexiones
+A R S 2 1
+A R D 1 1
+A R U 4 1
+
+# Hospital
+A H P 1 1
+A H K 2 1
+A H Y 5 1
+
+# Supermercado
+A S F 2 1
+A S M 1 1
+A S X 3 1
+
+# Farmacia
+A F L 1 1
+A F O 2 1
+
+# Comado central
+A C P 3 1
+A C T 1 1
+A C J 2 1
+
+# Deposito
+A D M 2 1
+A D W 4 1
+
+# Metro
+A M T 1 1
+A M E 2 1
+
+# Terminal
+A T E 1 1
+A T V 3 1
+
+# Lago
+A L O 1 1
+A L SUR 2 1
+
+# Parque
+A K O 3 1
+A K V 2 1
+
+# Jefatura
+A J U 1 1
+A J Z 2 1
+
+# Unidad
+A U W 4 1
+A U Z 1 1
+
+# Puntos cardinales
+A N O 2 1
+A E SUR 1 1
+A O SUR 3 1
+
+# Zonas rojas red
+A X Y 4 1
+A Y Z 3 1
+A Z W 5 1
+A W V 2 1
+A V X 6 1
+A X W 3 1

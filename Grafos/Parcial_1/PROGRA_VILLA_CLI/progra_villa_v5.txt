@@ -1,0 +1,155 @@
+# Formato:
+# TIPO <1 dirigido | 2 no dirigido>
+# N <nombre> <tipoLugar> <bloqueado 0/1>
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+# Headquarters
+N HQ HQ 0
+N R1 REFUGIO1 0
+N R2 REFUGIO2 0
+N R3 REFUGIO3 0
+N HS HOSPITAL1 0
+N H2 HOSPITAL2 0
+N S1 SUPERMERCADO1 0
+N S2 SUPERMERCADO2 0
+N F1 FARMACIA1 0
+N F2 FARMACIA2 0
+N P1 POLICIA1 0
+N P2 POLICIA2 0
+N B1 BANCO1 0
+N B2 BANCO2 0
+N M1 MERCADO1 0
+N M2 MERCADO2 0
+N E1 ESCUELA1 0
+N E2 ESCUELA2 0
+N C1 CENTRO1 0
+N C2 CENTRO2 0
+N T1 TORRE1 0
+N T2 TORRE2 0
+N D1 DEPOSITO1 0
+N D2 DEPOSITO2 0
+N L1 LAGO1 0
+N L2 LAGO2 0
+# Zonas rojas
+N X1 ROJO1 1
+N X2 ROJO2 1
+N X3 ROJO3 1
+N X4 ROJO4 1
+N X5 ROJO5 1
+N X6 ROJO6 1
+
+# HQ connections
+A HQ R1 1 1
+A HQ C1 2 1
+A HQ T1 3 1
+
+# Refu 1
+A R1 R2 2 1
+A R1 S1 1 1
+A R1 X1 4 1
+
+# Refu 2
+A R2 R3 1 1
+A R2 P1 2 1
+A R2 X2 3 1
+
+# Refu 3
+A R3 HS 2 1
+A R3 E1 1 1
+
+# Hospital 1
+A HS H2 2 1
+A HS F1 1 1
+A HS X1 5 1
+
+# Hospital 2
+A H2 P2 1 1
+A H2 C2 2 1
+A H2 X3 4 1
+
+# Supermercado 1
+A S1 S2 2 1
+A S1 F1 1 1
+A S1 M1 1 1
+
+# Supermercado 2
+A S2 B1 3 1
+A S2 X4 2 1
+
+# Farmacia 1
+A F1 F2 1 1
+A F1 D1 2 1
+
+# Farmacia 2
+A F2 E2 1 1
+A F2 X2 3 1
+
+# Policia 1
+A P1 P2 1 1
+A P1 B1 2 1
+A P1 X1 4 1
+
+# Policia 2
+A P2 T2 3 1
+A P2 X5 1 1
+
+# Banco 1
+A B1 B2 2 1
+A B1 C1 1 1
+
+# Banco 2
+A B2 L1 3 1
+A B2 X6 2 1
+
+# Mercado 1
+A M1 M2 1 1
+A M1 E1 2 1
+
+# Mercado 2
+A M2 D2 3 1
+A M2 X3 2 1
+
+# Escuela 1
+A E1 T1 1 1
+A E1 L1 2 1
+
+# Escuela 2
+A E2 D1 1 1
+A E2 X4 3 1
+
+# Centro 1
+A C1 C2 2 1
+A C1 T1 1 1
+
+# Centro 2
+A C2 T2 1 1
+A C2 X5 3 1
+
+# Torre 1
+A T1 D1 2 1
+A T1 L2 1 1
+
+# Torre 2
+A T2 L2 2 1
+A T2 X6 1 1
+
+# Deposito 1
+A D1 D2 1 1
+A D1 L1 2 1
+
+# Deposito 2
+A D2 L2 3 1
+
+# Lago 1
+A L1 L2 1 1
+
+# Red de Zonas Rojas
+A X1 X2 3 1
+A X2 X3 2 1
+A X3 X4 4 1
+A X4 X5 1 1
+A X5 X6 5 1
+A X6 X1 2 1
+A X1 X3 6 1
+A X3 X5 3 1

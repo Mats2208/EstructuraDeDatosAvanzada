@@ -1,0 +1,71 @@
+# Formato:
+# TIPO <1 dirigido | 2 no dirigido>
+# N <nombre> <tipoLugar> <bloqueado 0/1>
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+# Nodos principales
+N C CENTRAL 0
+N R REFUGIO 0
+N H HOSPITAL 0
+N S SUPERMERCADO 0
+N F FARMACIA 0
+N P POLICIA 0
+# Nodos secundarios
+N B BIBLIOTECA 0
+N M MERCADO 0
+N E ESCUELA 0
+N G GYM 0
+N D DEPOSITO 0
+# Zonas rojas (bloqueadas)
+N X ZONAROJA1 1
+N Y ZONAROJA2 1
+N Z ZONAROJA3 1
+
+# Conexiones desde Central
+A C R 2 1
+A C B 3 1
+A C M 1 1
+
+# Conexiones desde Refugio
+A R S 2 1
+A R E 4 1
+A R X 1 1
+
+# Desde Supermercado
+A S H 3 1
+A S G 2 1
+A S X 5 1
+
+# Desde Hospital
+A H P 1 1
+A H F 2 1
+A H Y 4 1
+
+# Desde Farmacia
+A F D 1 1
+A F Z 3 1
+
+# Desde Biblioteca
+A B E 2 1
+A B Y 1 1
+
+# Desde Mercado
+A M G 3 1
+A M D 2 1
+
+# Desde Escuela a Zona Roja
+A E Z 2 1
+
+# Gym conexion
+A G P 2 1
+A G Y 3 1
+
+# Deposito conexiones
+A D Z 1 1
+A D Y 2 1
+
+# Zonas rojas conectadas entre si
+A X Y 5 1
+A Y Z 4 1
+A Z X 6 1
