@@ -1,0 +1,18 @@
+# Mapa chico para validar UI, rutas cortas y seleccion de nodos.
+# TIPO <1 dirigido | 2 no dirigido>
+# N <id> <tipoLugar> <bloqueado 0/1> [x y]
+# A <origen> <destino> <peligro> <bidireccional 0/1>
+
+TIPO 2
+N R REFUGIO 0 0 0
+N S SUPERMERCADO 0 6 -2
+N F FARMACIA 0 5 4
+N H HOSPITAL 0 12 1
+N X ZONAROJA 1 10 6
+
+A R S 1 1
+A R F 2 1
+A S H 3 1
+A F H 2 1
+A F X 1 1
+A X H 5 1

@@ -1,0 +1,22 @@
+# Mapa para probar coordenadas negativas y pan de camara.
+
+TIPO 2
+N R REFUGIO 0 -30 -18
+N N NORTE 0 -44 -30
+N S SUPERMERCADO 0 -16 -22
+N F FARMACIA 0 -8 -6
+N P POLICIA 0 10 0
+N X ZONAROJA 1 0 16
+N B BARRICADA 0 24 12
+N H HOSPITAL 0 42 4
+N Z SUR 0 54 22
+
+A N R 2 1
+A R S 2 1
+A S F 2 1
+A F P 1 1
+A P H 3 1
+A F X 1 1
+A X B 1 1
+A B H 5 1
+A H Z 2 1
