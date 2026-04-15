@@ -1,0 +1,4 @@
+/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/PROGRA_VILLA_UI/game_sfml/build/CMakeFiles/game_v1_cli.dir
+/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/PROGRA_VILLA_UI/game_sfml/build/CMakeFiles/game_v1_sfml.dir
+/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/PROGRA_VILLA_UI/game_sfml/build/CMakeFiles/edit_cache.dir
+/Users/mateosoto/PROYECTOS/ESTRUCTURA DE DATOS AVANZADA/Grafos/Parcial_1/PROGRA_VILLA_UI/game_sfml/build/CMakeFiles/rebuild_cache.dir

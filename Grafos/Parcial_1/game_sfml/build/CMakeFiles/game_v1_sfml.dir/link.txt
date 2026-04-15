@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/game_v1_sfml.dir/src/main_sfml.cpp.o -o game_v1_sfml   -L/opt/homebrew/Cellar/sfml/3.0.2/lib  -Wl,-rpath,/opt/homebrew/Cellar/sfml/3.0.2/lib -lsfml-graphics -lsfml-window -lsfml-system
